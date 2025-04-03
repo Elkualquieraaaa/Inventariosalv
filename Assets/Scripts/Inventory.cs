@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-
+        ShowInventory();
     }
 
     public void AddItem(int Id, int Amount)
@@ -33,12 +33,11 @@ public class Inventory : MonoBehaviour
         if (items.ContainsKey(Id))
         {
             items[Id] -= Amount;
-            if (items[Id] <=0)
+            if (items[Id] <= 0)
             {
                 items.Remove(Id);
             }
         }
-        ShowInventory() ;
     }
 
     public void ShowInventory()

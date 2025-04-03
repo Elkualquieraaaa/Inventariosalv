@@ -11,7 +11,7 @@ public enum ConsumableTypeEnum
 [CreateAssetMenu(fileName = "Consumable SO", menuName = "New Consmumable SO")]
 public class ConsumableItemData : ItemdataSO
 {
-    [SerializeField]ConsumableTypeEnum type;
-    [SerializeField]int value;
+    [SerializeField] ConsumableTypeEnum type;
+    [SerializeField] int value;
 
 }

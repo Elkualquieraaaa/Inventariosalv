@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ItemDataBaseSO : ScriptableObject
 {
-    [SerializeField]List<ItemdataSO> Items;
+    [SerializeField] List<ItemdataSO> Items;
 
     public List<ItemdataSO> Items1 { get => Items; set => Items = value; }
 

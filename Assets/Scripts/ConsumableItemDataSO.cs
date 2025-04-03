@@ -8,7 +8,7 @@ public enum ConsumableTypeEnum
     Damage
 }
 
-[CreateAssetMenu(fileName = "Consumable SO", menuName = "Consmumable SO")]
+[CreateAssetMenu(fileName = "Consumable SO", menuName = "New Consmumable SO")]
 public class ConsumableItemData : ItemdataSO
 {
     [SerializeField]ConsumableTypeEnum type;

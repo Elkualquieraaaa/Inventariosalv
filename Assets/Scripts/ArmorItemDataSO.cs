@@ -15,5 +15,6 @@ public enum ArmaTypeEnum
 
 public class ArmorItemDataSO : ItemdataSO
 {
-    int value;
+    [SerializeField] ArmaTypeEnum type;
+    [SerializeField] int value;
 }

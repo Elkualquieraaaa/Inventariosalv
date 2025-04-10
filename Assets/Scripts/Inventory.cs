@@ -8,7 +8,13 @@ public class Inventory : MonoBehaviour
     {
         {7,12},
         {1,10},
+        {2,20},
+        {3,30},
     };
+    public delegate void Inventorydelegates();
+    public Inventorydelegates itemremove;
+    public Inventorydelegates itemupdate;
+    public Inventorydelegates itemadd;
 
     public Dictionary<int, int> Items { get => items; set => items = value; }
 
@@ -22,10 +28,12 @@ public class Inventory : MonoBehaviour
         if (!Items.ContainsKey(Id))
         {
             Items.Add(Id, Amount);
+            itemadd?.Invoke();
         }
         else
         {
             Items[Id] += Amount;
+            itemupdate?.Invoke();
         }
         ShowInventory();
     }
@@ -38,6 +46,11 @@ public class Inventory : MonoBehaviour
             if (Items[Id] <= 0)
             {
                 Items.Remove(Id);
+                itemremove?.Invoke();
+            }
+            else
+            {
+                itemupdate?.Invoke();
             }
         }
     }

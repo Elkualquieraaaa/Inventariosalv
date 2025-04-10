@@ -16,6 +16,7 @@ public class InventoryUIHandler : MonoBehaviour
     [SerializeField] Image iconitem;
     [SerializeField] TextMeshProUGUI amountitem;
     [SerializeField] TextMeshProUGUI nameitem;
+    int selecteditemid;
 
     private void Start()
     {
@@ -42,8 +43,9 @@ public class InventoryUIHandler : MonoBehaviour
             SearchedButtom.transform.Find("Amount").GetComponent<TextMeshProUGUI>().text = item.Value.ToString();
             SearchedButtom.GetComponent<Button>().onClick.AddListener(delegate
             {
+                selecteditemid = item.Key;
                 Showpreviewpanel();
-                Showitempreview(itemdata,item.Value);
+                Showitempreview(itemdata, item.Value);
 
             });
         }
@@ -59,5 +61,9 @@ public class InventoryUIHandler : MonoBehaviour
         previewpanel.alpha = 1;
         previewpanel.interactable = true;
         previewpanel.blocksRaycasts = true;
+    }
+    public void Deleteitem()
+    {
+        inventory.RemoveItem(selecteditemid,1);
     }
 }

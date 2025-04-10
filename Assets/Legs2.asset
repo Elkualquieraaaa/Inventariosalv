@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d38538625188be4c9c4be631add4230, type: 3}
   m_Name: Legs2
   m_EditorClassIdentifier: 
-  _Id: 8
+  _Id: 2
   _Itemname: Legs2
   _Sprite: {fileID: 1780681603, guid: 6b33d64b38f576746a7e0323ccb8e68f, type: 3}
   _Prefab: {fileID: 0}

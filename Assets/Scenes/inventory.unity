@@ -692,6 +692,9 @@ MonoBehaviour:
   itemsscroll: {fileID: 1346434153}
   previewpanel: {fileID: 1854226187}
   IntantiateButtoms: []
+  iconitem: {fileID: 162827597}
+  amountitem: {fileID: 1229589321}
+  nameitem: {fileID: 1084826541}
 --- !u!1 &480694235
 GameObject:
   m_ObjectHideFlags: 0
@@ -2502,7 +2505,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854226183}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0

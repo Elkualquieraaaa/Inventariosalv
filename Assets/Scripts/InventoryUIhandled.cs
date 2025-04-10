@@ -13,6 +13,9 @@ public class InventoryUIHandler : MonoBehaviour
     [SerializeField] ScrollRect itemsscroll;
     [SerializeField] CanvasGroup previewpanel;
     [SerializeField] List<GameObject> IntantiateButtoms = new();
+    [SerializeField] Image iconitem;
+    [SerializeField] TextMeshProUGUI amountitem;
+    [SerializeField] TextMeshProUGUI nameitem;
 
     private void Start()
     {
@@ -40,8 +43,16 @@ public class InventoryUIHandler : MonoBehaviour
             SearchedButtom.GetComponent<Button>().onClick.AddListener(delegate
             {
                 Showpreviewpanel();
+                Showitempreview(itemdata,item.Value);
+
             });
         }
+    }
+    public void Showitempreview(ItemdataSO itemdata, int amount)
+    {
+        iconitem.sprite = itemdata.Sprite;
+        nameitem.text = itemdata.name;
+        amountitem.text = amount.ToString();
     }
     public void Showpreviewpanel()
     {

@@ -6,9 +6,11 @@ public class Inventory : MonoBehaviour
 {
     Dictionary<int, int> items = new Dictionary<int, int>()
     {
-        {2,12},
-        {1,10 }
+        {7,12},
+        {1,10},
     };
+
+    public Dictionary<int, int> Items { get => items; set => items = value; }
 
     private void Start()
     {
@@ -17,32 +19,32 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(int Id, int Amount)
     {
-        if (!items.ContainsKey(Id))
+        if (!Items.ContainsKey(Id))
         {
-            items.Add(Id, Amount);
+            Items.Add(Id, Amount);
         }
         else
         {
-            items[Id] += Amount;
+            Items[Id] += Amount;
         }
         ShowInventory();
     }
 
     public void RemoveItem(int Id, int Amount)
     {
-        if (items.ContainsKey(Id))
+        if (Items.ContainsKey(Id))
         {
-            items[Id] -= Amount;
-            if (items[Id] <= 0)
+            Items[Id] -= Amount;
+            if (Items[Id] <= 0)
             {
-                items.Remove(Id);
+                Items.Remove(Id);
             }
         }
     }
 
     public void ShowInventory()
     {
-        foreach (var item in items)
+        foreach (var item in Items)
         {
             Debug.Log(item);
         }

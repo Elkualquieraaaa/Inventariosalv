@@ -10,7 +10,7 @@ public class ItemDataBaseSO : ScriptableObject
 
     public List<ItemdataSO> Items1 { get => Items; set => Items = value; }
 
-    public ItemdataSO SearchItem(int Id)
+    public ItemdataSO SearchItemByID(int Id)
     {
         return Items.Find(x => x.Id == Id);
     }
